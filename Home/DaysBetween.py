@@ -24,11 +24,7 @@ from datetime import date
 
 
 def days_diff(a, b):
-    a1, a2, a3 = a
-    b1, b2, b3 = b
-    date1 = date(a1, a2, a3)
-    date2 = date(b1, b2, b3)
-    answer = date1 - date2
+    answer = date(*a) - date(*b)
     return abs(answer.days)
 
 
