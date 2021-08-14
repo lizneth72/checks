@@ -8,33 +8,10 @@ Output: A string.
 
 
 def backward_string_by_word(text: str) -> str:
-    word = ""
-    spacer = ""
-    new_sentence = []
-    last = ""
-    for i in text:
-        if i.isalnum():
-            word += i
-            last = "word"
-            if spacer.isspace():
-                new_sentence.append(spacer)
-                spacer = ""
-        elif i == " ":
-            spacer += i
-            last = "space"
-            if word.isalnum():
-                new_sentence.append(word)
-                word = ""
-    if last == "word":
-        new_sentence.append(word)
-    elif last == "space":
-        new_sentence.append(spacer)
-    print(new_sentence)
-    new_new_sentence = []
-    for i in new_sentence:
-        new_new_sentence.append("".join(list(reversed(i))))
-    print("".join(new_new_sentence))
-    return "".join(new_new_sentence)
+    new_word = []
+    for i in text.split(" "):
+        new_word.append(i[-1::-1])
+    return " ".join(new_word)
 
 
 if __name__ == '__main__':
