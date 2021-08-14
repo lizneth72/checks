@@ -9,11 +9,7 @@ Output: An Int.
 
 
 def count_digits(text: str) -> int:
-    counter = 0
-    for i in text:
-        if i.isdigit():
-            counter += 1
-    return counter
+    return sum(i.isdigit() for i in text)
 
 
 if __name__ == '__main__':
